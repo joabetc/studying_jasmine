@@ -1,0 +1,32 @@
+<html>
+  <script type="text/javascript">
+    function MaxMin() {
+      var max;
+      var min;
+
+      var clazz = {
+        find : function(nums) {
+
+          min = Number.MAX_VALUE;
+          max = Number.MIN_VALUE;
+
+          nums.forEach(function(num) {
+            if(num < min) min = num;
+            if(num > max) max = num;
+          });
+        },
+
+        getMin : function() { return min; },
+        getMax : function() { return max; }
+      };
+
+      return clazz;
+    }
+
+    var code = new MaxMin();
+    code.find([7, 6, 5, 4]);
+
+    console.log(code.getMax() == 7);
+    console.log(code.getMin() == 4);
+  </script>
+</html>
