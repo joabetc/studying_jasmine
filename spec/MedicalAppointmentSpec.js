@@ -3,7 +3,7 @@ describe("MedicalAppointment", function() {
   var patient;
 
   beforeEach(function() {
-    patient = new Patient("Willian", 28, 72, 1.80);
+    patient = new PatientBuilder().withWeight(10).build();
   });
   
   describe("returning medical appointment", function() {
