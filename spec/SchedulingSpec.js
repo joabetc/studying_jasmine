@@ -1,9 +1,14 @@
 describe("Scheduling", function() {
 
-  it("should schedule to 20 day after", function() {
-    var patient = new PatientBuilder().build();
-    var schedule = new Scheduling();
+  var patient;
+  var schedule;
 
+  beforeEach(function() {
+    patient = new PatientBuilder().build();
+    schedule = new Scheduling();
+  });
+
+  it("should schedule to 20 day after", function() {
     var appointment = new MedicalAppointment(patient, [], false, false, new Date(2014, 7, 1));
     var newAppointment = schedule.to(appointment);
 
@@ -11,9 +16,6 @@ describe("Scheduling", function() {
   });
 
   it("should not schedule during the weekend", function() {
-    var patient = new PatientBuilder().build();
-    var schedule = new Scheduling();
-
     var appointment = new MedicalAppointment(patient, [], false, false, new Date(2014, 5, 30));
     var newAppointment = schedule.to(appointment);
 
