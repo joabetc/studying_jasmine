@@ -1,4 +1,4 @@
-function MedicalAppointment(patient, procedures, private, returning) {
+function MedicalAppointment(patient, procedures, private, returning, date) {
 
   var clazz = {
     price: function() {
@@ -15,7 +15,13 @@ function MedicalAppointment(patient, procedures, private, returning) {
       if(private) finalPrice *= 2;
 
       return finalPrice;
-    }
+    },
+
+    getName: function() { return patient; },
+    getProcedures: function() { return procedures; },
+    isPrivate: function() { return private; },
+    isReturning: function() { return returning; },
+    getDate: function() { return date; }
   };
 
   return clazz;
