@@ -5,4 +5,4 @@ describe("Patient", function() {
     var bmi = patient.bmi();
     expect(bmi).toEqual(72 / (1.82 * 1.82));
   });
-})
+});
