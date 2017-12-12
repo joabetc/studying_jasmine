@@ -14,11 +14,18 @@ describe("MedicalAppointment", function() {
     expect(medicalAppointment.price()).toEqual(50);
   });
 
-  it("should charge the double price per private medical appointment", function() {
+  it("should charge the double price per private medical appointment without special procedures", function() {
     var patient = new Patient("Willian", 28, 72, 1.80);
     var medicalAppointment = new MedicalAppointment(patient, ["proc1", "proc2"], true, false);
 
     expect(medicalAppointment.price()).toEqual(100);
+  });
+
+  it("should charge the double price per private medical appointment with special procedures", function() {
+    var patient = new Patient("Willian", 28, 72, 1.80);
+    var medicalAppointment = new MedicalAppointment(patient, ["x-ray"], true, false);
+
+    expect(medicalAppointment.price()).toEqual(110);
   });
 
   it("should charge a specific price depending on the procedure", function() {
