@@ -8,6 +8,10 @@ function PatientBuilder() {
     build: function() {
       return new PatientBuilder(name, age, weight, height);
     },
+    withName: function(value) {
+      name = value;
+      return this;
+    },
     withAge: function(value) {
       age = value;
       return this;
