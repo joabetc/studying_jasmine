@@ -12,7 +12,7 @@ function MedicalAppointment(patient, procedures, private, returning) {
         else finalPrice += 25;
       });
 
-      if(private) finalPrice += 2;
+      if(private) finalPrice *= 2;
 
       return finalPrice;
     }
