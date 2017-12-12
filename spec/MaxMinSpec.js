@@ -23,4 +23,12 @@ describe("MaxMin", function() {
     expect(maxMin.getMax()).toEqual(8);
     expect(maxMin.getMin()).toEqual(5);
   });
+
+  it("should understand only one number", function() {
+    var maxMin = new MaxMin();
+    maxMin.find([8]);
+
+    expect(maxMin.getMax()).toEqual(8);
+    expect(maxMin.getMin()).toEqual(8);
+  });
 });
